@@ -1,0 +1,75 @@
+$yellow: #e5b900;
+$yellowHover: #c8a511;
+
+header {
+    .nav {
+        &--logo {
+            padding: 20px 0;
+            width: 100%;
+            max-width: 150px;
+        }
+    }
+}
+
+.form--container {
+    h3 {
+        border-bottom: 2px solid $yellow;
+    }
+
+    &.form--items {
+        border-radius: #e1e1e1;
+
+        &--cointainer {
+            margin-top: 20px;
+        }
+    }
+}
+
+/*
+* BUTTONS
+*/
+.btn {
+    &--primary {
+        background-color: $yellow;
+        border-color: $yellow;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $yellowHover;
+            border-color: $yellow;
+        }
+    }
+}
+
+/*
+* UTILITIES
+*/
+.mx {
+    &--auto {
+        display: table;
+        margin: 0 auto;
+    }
+}
+
+.m {
+    &y {
+        &--20 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &--top {
+        &-20 {
+            margin-top: 20px;
+        }
+        &-40 {
+            margin-top: 40px;
+        }
+    }
+}
+
+hr {
+    margin: 0;
+}
