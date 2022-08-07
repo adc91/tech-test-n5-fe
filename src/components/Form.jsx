@@ -6,13 +6,13 @@ import Button from "../components/shared/Button";
 const Form = () => {
   const { register, control, handleSubmit } = useForm({
     defaultValues: {
-      movie: [],
+      actors: [],
     },
   });
 
   const { fields, append, remove } = useFieldArray({
     control,
-    name: "movie",
+    name: "actors",
   });
 
   const onSubmit = (data) => {
@@ -36,7 +36,7 @@ const Form = () => {
                       type="text"
                       className="u-full-width"
                       placeholder="Ej: The Big Bang Theory"
-                      {...register("showTitle", {
+                      {...register("title", {
                         required:
                           "Por favor, ingrese el título de la Serie y/o Película",
                       })}
@@ -51,7 +51,7 @@ const Form = () => {
                     <input
                       type="file"
                       className="u-full-width"
-                      {...register("showCover", {
+                      {...register("cover", {
                         required:
                           "Por favor, seleccione el cover de la Serie y/o Película",
                       })}
@@ -74,7 +74,7 @@ const Form = () => {
                               type="text"
                               className="u-full-width"
                               placeholder="Sheldon Cooper"
-                              {...register(`movie.${index}.fullName`, {
+                              {...register(`actors.${index}.fullName`, {
                                 required: "Este campo es obligatorio",
                               })}
                             />
@@ -85,7 +85,7 @@ const Form = () => {
                               id={`file-${index}`}
                               type="file"
                               className="u-full-width"
-                              {...register(`movie.${index}.photo`, {
+                              {...register(`actors.${index}.photo`, {
                                 required: "Este campo es obligatorio",
                               })}
                             />
