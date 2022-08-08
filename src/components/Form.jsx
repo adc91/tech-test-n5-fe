@@ -84,6 +84,7 @@ const Form = () => {
 
           <StyledButton
             variant="secondary"
+            size="small"
             type="button"
             onClick={() => {
               movieOneAppend({});
@@ -110,6 +111,7 @@ const Form = () => {
 
           <StyledButton
             variant="secondary"
+            size="small"
             type="button"
             onClick={() => {
               movieTwoAppend({});
