@@ -11,6 +11,8 @@ import { StyledForm, StyledH3, StyledButtonSubmit } from "./styles/Form.styled";
 import { StyledButton } from "./styles/Button.styled";
 import { StyledHr } from "./styles/Tags.styled";
 
+import { fetchAPI } from "../services/api";
+
 const Form = () => {
   const {
     register,
@@ -40,7 +42,26 @@ const Form = () => {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    const { movieInfo, actorsOne, actorsTwo } = data;
+
+    const formData = new FormData();
+
+    movieInfo.forEach((item, index) => {
+      formData.append(`movieInfo[${index}].title`, item.title);
+      formData.append(`movieInfo[${index}].cover`, item.cover[0]);
+    });
+
+    actorsOne.forEach((item, index) => {
+      formData.append(`actorsOne[${index}].fullName`, item.fullName);
+      formData.append(`actorsOne[${index}].photo`, item.photo[0]);
+    });
+
+    actorsTwo.forEach((item, index) => {
+      formData.append(`actorsTwo[${index}].fullName`, item.fullName);
+      formData.append(`actorsTwo[${index}].photo`, item.photo[0]);
+    });
+
+    fetchAPI(formData).then((response) => console.log(response));
   };
 
   return (
