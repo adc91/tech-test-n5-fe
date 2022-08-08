@@ -5,14 +5,14 @@ import {
   StyledLabel,
 } from "../styles/Form.styled";
 
-const FormMovieInfo = ({ register, errors }) => {
+const FormMovieInfo = ({ index, fieldName, register, errors }) => {
   return (
     <>
       <StyledFormControl>
         <StyledLabel>Nombre de la Serie/Película:</StyledLabel>
         <StyledInput
           type="text"
-          {...register("title", {
+          {...register(`${fieldName}.${index}.title`, {
             required: "Por favor, ingrese el título.",
           })}
         ></StyledInput>
@@ -24,7 +24,7 @@ const FormMovieInfo = ({ register, errors }) => {
         <StyledInput
           type="file"
           accept="image/png, image/gif, image/jpeg"
-          {...register("cover", {
+          {...register(`${fieldName}.${index}.cover`, {
             required: "Por favor, seleccione el cover.",
           })}
         ></StyledInput>

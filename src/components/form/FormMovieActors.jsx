@@ -7,20 +7,20 @@ import {
   StyledLabel,
 } from "../styles/Form.styled";
 
-const FormMovieActors = ({ index, remove, register, errors }) => {
+const FormMovieActors = ({ index, fieldName, remove, register, errors }) => {
   return (
     <StyledFieldSet>
       <StyledFormControl>
         <StyledLabel>Nombre y Apellido:</StyledLabel>
         <StyledInput
           type="text"
-          {...register(`actors.${index}.fullName`, {
+          {...register(`${fieldName}.${index}.fullName`, {
             required: "Por favor, ingrese el Nombre y Apellido.",
           })}
         ></StyledInput>
-        {errors?.["actors"]?.[index]?.fullName && (
+        {errors?.[`${fieldName}`]?.[index]?.fullName && (
           <StyledError>
-            {errors?.["actors"]?.[index]?.fullName.message}
+            {errors?.[`${fieldName}`]?.[index]?.fullName.message}
           </StyledError>
         )}
       </StyledFormControl>
@@ -30,13 +30,13 @@ const FormMovieActors = ({ index, remove, register, errors }) => {
         <StyledInput
           type="file"
           accept="image/png, image/gif, image/jpeg"
-          {...register(`actors.${index}.photo`, {
+          {...register(`${fieldName}.${index}.photo`, {
             required: "Por favor, seleccione una foto.",
           })}
         ></StyledInput>
-        {errors?.["actors"]?.[index]?.photo && (
+        {errors?.[`${fieldName}`]?.[index]?.photo && (
           <StyledError>
-            {errors?.["actors"]?.[index]?.photo.message}
+            {errors?.[`${fieldName}`]?.[index]?.photo.message}
           </StyledError>
         )}
       </StyledFormControl>

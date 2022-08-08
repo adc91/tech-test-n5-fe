@@ -19,9 +19,24 @@ const Form = () => {
     formState: { errors },
   } = useForm();
 
-  const { fields, append, remove } = useFieldArray({
+  // Form 1
+  const {
+    fields: movieOneFields,
+    append: movieOneAppend,
+    remove: movieOneRemove,
+  } = useFieldArray({
     control,
-    name: "actors",
+    name: "actorsOne",
+  });
+
+  // Form 2
+  const {
+    fields: movieTwoFields,
+    append: movieTwoAppend,
+    remove: movieTwoRemove,
+  } = useFieldArray({
+    control,
+    name: "actorsTwo",
   });
 
   const onSubmit = (data) => {
@@ -32,7 +47,20 @@ const Form = () => {
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <Row>
         <Col cols="col col-6">
-          <FormMovieInfo register={register} errors={errors} />
+          <FormMovieInfo
+            index={0}
+            fieldName="movieInfo"
+            register={register}
+            errors={errors}
+          />
+        </Col>
+        <Col cols="col col-6">
+          <FormMovieInfo
+            index={1}
+            fieldName="movieInfo"
+            register={register}
+            errors={errors}
+          />
         </Col>
       </Row>
 
@@ -41,12 +69,13 @@ const Form = () => {
       <Row>
         <Col cols="col col-6">
           <StyledH3>Reparto</StyledH3>
-          {fields.map((item, index) => {
+          {movieOneFields.map((item, index) => {
             return (
               <FormMovieActors
                 key={item.id}
                 index={index}
-                remove={remove}
+                fieldName="actorsOne"
+                remove={movieOneRemove}
                 register={register}
                 errors={errors}
               />
@@ -57,7 +86,33 @@ const Form = () => {
             variant="secondary"
             type="button"
             onClick={() => {
-              append({});
+              movieOneAppend({});
+            }}
+          >
+            Agregar
+          </StyledButton>
+        </Col>
+
+        <Col cols="col col-6">
+          <StyledH3>Reparto</StyledH3>
+          {movieTwoFields.map((item, index) => {
+            return (
+              <FormMovieActors
+                key={item.id}
+                index={index}
+                fieldName="actorsTwo"
+                remove={movieTwoRemove}
+                register={register}
+                errors={errors}
+              />
+            );
+          })}
+
+          <StyledButton
+            variant="secondary"
+            type="button"
+            onClick={() => {
+              movieTwoAppend({});
             }}
           >
             Agregar
