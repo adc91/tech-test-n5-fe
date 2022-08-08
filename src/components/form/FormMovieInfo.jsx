@@ -16,7 +16,11 @@ const FormMovieInfo = ({ index, fieldName, register, errors }) => {
             required: "Por favor, ingrese el título.",
           })}
         ></StyledInput>
-        {errors.title && <StyledError>{errors.title.message}</StyledError>}
+        {errors?.[`${fieldName}`]?.[index]?.title && (
+          <StyledError>
+            {errors?.[`${fieldName}`]?.[index]?.title.message}
+          </StyledError>
+        )}
       </StyledFormControl>
 
       <StyledFormControl>
@@ -28,7 +32,11 @@ const FormMovieInfo = ({ index, fieldName, register, errors }) => {
             required: "Por favor, seleccione el cover.",
           })}
         ></StyledInput>
-        {errors.cover && <StyledError>{errors.cover.message}</StyledError>}
+        {errors?.[`${fieldName}`]?.[index]?.cover && (
+          <StyledError>
+            {errors?.[`${fieldName}`]?.[index]?.cover.message}
+          </StyledError>
+        )}
       </StyledFormControl>
     </>
   );
