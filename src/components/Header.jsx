@@ -1,13 +1,15 @@
-import React from "react";
+import { StyledNav } from "./styles/Header.styled";
+import { StyledH1 } from "./styles/Tags.styled";
 
 import logo from "../assets/images/logo-imdb.png";
 
-const Header = () => {
+export const Header = () => {
   return (
-    <header className="header">
-      <nav className="nav">
-        <img src={logo} className="nav nav--logo" alt="Logo" />
-      </nav>
+    <header>
+      <StyledNav>
+        <img src={logo} className="nav__logo" alt="Logo" />
+      </StyledNav>
+      <StyledH1>Cargar nueva Película/Serie</StyledH1>
     </header>
   );
 };

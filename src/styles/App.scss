@@ -1,16 +1,6 @@
 $yellow: #e5b900;
 $yellowHover: #c8a511;
 
-header {
-    .nav {
-        &--logo {
-            padding: 20px 0;
-            width: 100%;
-            max-width: 150px;
-        }
-    }
-}
-
 .form--container {
     h3 {
         border-bottom: 2px solid $yellow;
@@ -28,19 +18,19 @@ header {
 /*
 * BUTTONS
 */
-.btn {
-    &--primary {
-        background-color: $yellow;
-        border-color: $yellow;
+// .btn {
+//     &--primary {
+//         background-color: $yellow;
+//         border-color: $yellow;
 
-        &:hover,
-        &:active,
-        &:focus {
-            background-color: $yellowHover;
-            border-color: $yellow;
-        }
-    }
-}
+//         &:hover,
+//         &:active,
+//         &:focus {
+//             background-color: $yellowHover;
+//             border-color: $yellow;
+//         }
+//     }
+// }
 
 /*
 * UTILITIES

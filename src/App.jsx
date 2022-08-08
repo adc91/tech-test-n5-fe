@@ -1,20 +1,24 @@
-import React from "react";
+import React, { Fragment } from "react";
 
-// Styles
-import "./styles/vendor/bemskel.min.css";
-import "./styles/App.scss";
+import GlobalStyles from "./components/styles/GlobalStyles";
 
 import Header from "./components/Header";
 import Form from "./components/Form";
 
+import "./styles/vendor/bootstrap-reboot.min.css";
+import "./styles/vendor/bootstrap-grid.min.css";
+
 const App = () => {
   return (
-    <div className="container">
-      <Header />
-      <main>
-        <Form />
-      </main>
-    </div>
+    <Fragment>
+      <GlobalStyles />
+      <div className="container">
+        <Header />
+        <main>
+          <Form />
+        </main>
+      </div>
+    </Fragment>
   );
 };
 
