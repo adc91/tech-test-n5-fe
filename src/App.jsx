@@ -1,7 +1,8 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import GlobalStyles from "./components/styles/GlobalStyles";
-
+import Container from "./components/grid/Container";
+import Main from "./components/grid/Main";
 import Header from "./components/Header";
 import Form from "./components/Form";
 
@@ -10,15 +11,15 @@ import "./styles/vendor/bootstrap-grid.min.css";
 
 const App = () => {
   return (
-    <Fragment>
+    <>
       <GlobalStyles />
-      <div className="container">
+      <Container>
         <Header />
-        <main>
+        <Main>
           <Form />
-        </main>
-      </div>
-    </Fragment>
+        </Main>
+      </Container>
+    </>
   );
 };
 

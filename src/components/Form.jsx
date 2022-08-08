@@ -1,6 +1,9 @@
 import React from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 
+import Row from "./grid/Row";
+import Col from "./grid/Col";
+
 import {
   StyledForm,
   StyledInput,
@@ -12,7 +15,6 @@ import {
   StyledButtonSubmit,
 } from "./styles/Form.styled";
 import { StyledButton } from "./styles/Button.styled";
-import { StyledRow, StyledCol } from "./styles/Grid.styled";
 import { StyledHr } from "./styles/Tags.styled";
 
 const Form = () => {
@@ -38,8 +40,8 @@ const Form = () => {
 
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <StyledRow className="row">
-        <StyledCol className="col col-6">
+      <Row>
+        <Col cols="col col-6">
           <StyledFormControl>
             <StyledLabel>Nombre de la Serie/Película:</StyledLabel>
             <StyledInput
@@ -62,13 +64,13 @@ const Form = () => {
             ></StyledInput>
             {errors.cover && <StyledError>{errors.cover.message}</StyledError>}
           </StyledFormControl>
-        </StyledCol>
-      </StyledRow>
+        </Col>
+      </Row>
 
       <StyledHr />
 
-      <StyledRow className="row">
-        <StyledCol className="col col-6">
+      <Row>
+        <Col cols="col col-6">
           <StyledH3>Reparto</StyledH3>
           {fields.map((item, index) => {
             return (
@@ -125,8 +127,8 @@ const Form = () => {
           >
             Agregar
           </StyledButton>
-        </StyledCol>
-      </StyledRow>
+        </Col>
+      </Row>
 
       <StyledHr />
 
