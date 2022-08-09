@@ -47,18 +47,18 @@ const Form = () => {
     const formData = new FormData();
 
     movieInfo.forEach((item, index) => {
-      formData.append(`movieInfo[${index}].title`, item.title);
-      formData.append(`movieInfo[${index}].cover`, item.cover[0]);
+      formData.append(`movieInfoTitle[]`, item.title);
+      formData.append(`movieInfoCover[]`, item.cover[0]);
     });
 
     actorsOne.forEach((item, index) => {
-      formData.append(`actorsOne[${index}].fullName`, item.fullName);
-      formData.append(`actorsOne[${index}].photo`, item.photo[0]);
+      formData.append(`actorsOne[]`, item.fullName);
+      formData.append(`actorsOne[]`, item.photo[0]);
     });
 
     actorsTwo.forEach((item, index) => {
-      formData.append(`actorsTwo[${index}].fullName`, item.fullName);
-      formData.append(`actorsTwo[${index}].photo`, item.photo[0]);
+      formData.append(`actorsTwo[]`, item.fullName);
+      formData.append(`actorsTwo[]`, item.photo[0]);
     });
 
     fetchAPI(formData).then((response) => console.log(response));
