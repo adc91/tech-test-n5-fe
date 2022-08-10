@@ -8,6 +8,7 @@ import {
     StyledForm,
     StyledH3,
     StyledButtonSubmit,
+    StyledError,
 } from "../styles/Form.styled";
 import { StyledButton } from "../styles/Button.styled";
 import { StyledHr } from "../styles/Tags.styled";
@@ -40,35 +41,41 @@ const FormMovieMain = () => {
     });
 
     const onSubmit = (data) => {
-        const formData = new FormData();
+        if (data.actors.length) {
+            const formData = new FormData();
+            formData.append("title", data.title);
+            formData.append("cover", data.cover_file);
+            formData.append("actors", JSON.stringify(data.actors));
 
-        formData.append("title", data.title);
-        formData.append("cover", data.cover_file);
-        formData.append("actors", JSON.stringify(data.actors));
+            setSubmitting(true);
 
-        setSubmitting(true);
+            fetchAPI(`${API_URL}/movies`, formData)
+                .then((response) => {
+                    if (response.success !== true)
+                        throw new Error(
+                            "Su formulario no ha sido enviado. Por favor, recargue la página e intente nuevamente."
+                        );
 
-        fetchAPI(`${API_URL}/movies`, formData)
-            .then((response) => {
-                if (response.success !== true)
-                    throw new Error(
-                        "Su formulario no ha sido enviado. Por favor, recargue la página e intente nuevamente."
-                    );
-
-                reset();
-                handleAfterSubmitMessage({
-                    className: "__success",
-                    message:
-                        "La serie y/o película ha sido agregada correctamente.",
-                });
-            })
-            .catch((err) => {
-                handleAfterSubmitMessage({
-                    className: "__danger",
-                    message: err,
-                });
-            })
-            .finally(() => setSubmitting(false));
+                    reset();
+                    handleAfterSubmitMessage({
+                        className: "__success",
+                        message:
+                            "La serie y/o película ha sido agregada correctamente.",
+                    });
+                })
+                .catch((err) => {
+                    handleAfterSubmitMessage({
+                        className: "__danger",
+                        message: err,
+                    });
+                })
+                .finally(() => setSubmitting(false));
+        } else {
+            handleAfterSubmitMessage({
+                className: "__danger",
+                message: "Debe agregar al menos un miembro del reparto.",
+            });
+        }
     };
 
     const handleAfterSubmitMessage = (message) => {
@@ -89,6 +96,9 @@ const FormMovieMain = () => {
                 errors={errors}
             />
             <StyledH3>Reparto</StyledH3>
+            {errors.actors?.root?.message && (
+                <StyledError>{errors.actors?.root?.message}</StyledError>
+            )}
             {actors.map((item, index) => {
                 return (
                     <FormMovieActors

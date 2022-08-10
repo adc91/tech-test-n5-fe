@@ -16,6 +16,9 @@ const InputFileWithUpload = ({
     const [filePreview, setFilePreview] = useState("");
     const [fileInputWatch, setFileInputWatch] = useState(false);
 
+    // Generate random string for input file
+    const fieldId = (Math.random() + 1).toString(36).substring(7);
+
     const onInput = async (e) => {
         const file = e.target.files[0];
 
@@ -51,6 +54,7 @@ const InputFileWithUpload = ({
     return (
         <>
             <StyledInput
+                id={`file-${fieldId}`}
                 type="file"
                 accept="image/png, image/jpeg"
                 onInput={onInput}

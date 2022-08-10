@@ -39,7 +39,7 @@ export const StyledInput = styled.input`
 }
 `;
 
-export const StyledError = styled.span`
+export const StyledError = styled.div`
     font-size: 12px;
     color: #b02a37;
 `;
