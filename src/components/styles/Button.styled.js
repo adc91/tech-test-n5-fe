@@ -19,55 +19,64 @@ export const StyledButton = styled.button`
     vertical-align: middle;
 
     ${({ variant }) =>
-      variant === "primary" &&
-      `
-      border: 1px solid #0D6EFD;
-      background-color: #0D6EFD;
+        variant === "primary" &&
+        `
+            border: 1px solid #0D6EFD;
+            background-color: #0D6EFD;
 
-      &:hover,
-      &:active,
-      &:focus {
-          background-color: #0a58ca;
-    }`}
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: #0a58ca;
+            }
 
-    ${({ variant }) =>
-      variant === "secondary" &&
-      `
-      border: 1px solid #565e64;
-      background-color: #565e64;
-
-      &:hover,
-      &:active,
-      &:focus {
-          background-color: #51585e;
-    }`}
+            &:disabled {
+                color: #fff;
+                pointer-events: none;
+                background-color: #0d6efd;
+                border-color: #0d6efd;
+                opacity: 0.65;
+            }
+        `}
 
     ${({ variant }) =>
-      variant === "danger" &&
-      `
-      border: 1px solid #b02a37;
-      background-color: #b02a37;
+        variant === "secondary" &&
+        `
+            border: 1px solid #565e64;
+            background-color: #565e64;
 
-      &:hover,
-      &:active,
-      &:focus {
-          background-color: #a52834;
-    }`}
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: #51585e;
+            }`}
+
+    ${({ variant }) =>
+        variant === "danger" &&
+        `
+            border: 1px solid #b02a37;
+            background-color: #b02a37;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: #a52834;
+            }`}
 
     ${({ size }) =>
-      size === "small" &&
-      `
-        font-size: 12px
-        font-weight: regular;
-        line-height: 15px;
-        padding: 5px 15px;
-        border-radius: 5px;
-    }`}
+        size === "small" &&
+        `
+            font-size: 12px
+            font-weight: regular;
+            line-height: 15px;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }`}
 
     ${({ center }) =>
-      center &&
-      `
-      margin: 0 auto;
-      display: table;
-  }`}
+        center &&
+        `
+            margin: 0 auto;
+            display: table;
+        }`}
 `;

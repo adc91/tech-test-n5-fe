@@ -44,6 +44,16 @@ export const StyledError = styled.span`
   color: #b02a37;
 `;
 
+export const StyledImgPreview = styled.div`
+  margin-top: 10px;
+
+  .do-upload {
+    &__active {
+      opacity: 0.3;
+    }
+  }
+`;
+
 export const StyledH3 = styled(H3)`
   margin: 20px 0;
 `;

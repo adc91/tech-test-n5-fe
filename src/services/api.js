@@ -1,23 +1,22 @@
-const { REACT_APP_API_URL } = process.env;
+export const fetchAPI = async (apiUrl, data) => {
+  return new Promise((resolve, reject) => {
+    fetch(apiUrl, {
+      method: "POST",
+      body: data,
+    })
+      .then((response) => {
+        if (response.status !== 200)
+          reject(
+            "Estamos experimentando problemas con nuestra plataforma. Vuelva a intentarlo en algunos minutos."
+          );
 
-export const fetchAPI = async (data) => {
-  fetch(`${REACT_APP_API_URL}/movies`, {
-    method: "POST",
-    body: data,
-  })
-    .then((response) => {
-      if (response.status !== 200)
-        throw new Error(
-          "Estamos experimentando problemas con nuestra plataforma. Vuelva a intentarlo en algunos minutos."
-        );
-
-      return response.json();
-    })
-    .then((response) => {
-      return response;
-    })
-    .catch((error) => {
-      alert(error.message);
-    })
-    .finally(() => {});
+        return response.json();
+      })
+      .then((response) => {
+        resolve(response);
+      })
+      .catch((error) => {
+        reject(error.message);
+      });
+  });
 };

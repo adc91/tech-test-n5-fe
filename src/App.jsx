@@ -4,6 +4,7 @@ import GlobalStyles from "./components/styles/GlobalStyles";
 import Container from "./components/grid/Container";
 import Main from "./components/grid/Main";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Form from "./components/Form";
 
 import "./styles/vendor/bootstrap-reboot.min.css";
@@ -18,6 +19,7 @@ const App = () => {
         <Main>
           <Form />
         </Main>
+        <Footer />
       </Container>
     </>
   );
