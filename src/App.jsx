@@ -11,18 +11,18 @@ import "./styles/vendor/bootstrap-reboot.min.css";
 import "./styles/vendor/bootstrap-grid.min.css";
 
 const App = () => {
-  return (
-    <>
-      <GlobalStyles />
-      <Container>
-        <Header />
-        <Main>
-          <Form />
-        </Main>
-        <Footer />
-      </Container>
-    </>
-  );
+    return (
+        <>
+            <GlobalStyles />
+            <Container>
+                <Header />
+                <Main>
+                    <Form />
+                </Main>
+                <Footer />
+            </Container>
+        </>
+    );
 };
 
 export default App;

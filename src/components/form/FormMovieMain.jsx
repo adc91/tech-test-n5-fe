@@ -50,6 +50,11 @@ const FormMovieMain = () => {
 
         fetchAPI(`${API_URL}/movies`, formData)
             .then((response) => {
+                if (response.success !== true)
+                    throw new Error(
+                        "Su formulario no ha sido enviado. Por favor, recargue la página e intente nuevamente."
+                    );
+
                 reset();
                 handleAfterSubmitMessage({
                     className: "__success",
@@ -60,8 +65,7 @@ const FormMovieMain = () => {
             .catch((err) => {
                 handleAfterSubmitMessage({
                     className: "__danger",
-                    message:
-                        "Su formulario no ha sido enviado. Por favor, recargue la página e intente nuevamente.",
+                    message: err,
                 });
             })
             .finally(() => setSubmitting(false));

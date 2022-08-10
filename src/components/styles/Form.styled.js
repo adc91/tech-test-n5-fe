@@ -4,22 +4,22 @@ import { StyledH3 as H3 } from "./Tags.styled";
 import { StyledButton as Button } from "./Button.styled";
 
 export const StyledForm = styled.form`
-  margin-top: 20px;
+    margin-top: 20px;
 `;
 
 export const StyledFieldSet = styled.fieldset`
-  border: 1px solid rgba(243, 206, 19, 0.5);
-  padding: 10px;
-  margin-bottom: 30px;
+    border: 1px solid rgba(243, 206, 19, 0.5);
+    padding: 10px;
+    margin-bottom: 30px;
 `;
 
 export const StyledFormControl = styled.div`
-  margin: 20px 0;
+    margin: 20px 0;
 `;
 
 export const StyledLabel = styled.label`
-  display: inline-block;
-  margin-bottom: 5px;
+    display: inline-block;
+    margin-bottom: 5px;
 `;
 
 export const StyledInput = styled.input`
@@ -40,24 +40,24 @@ export const StyledInput = styled.input`
 `;
 
 export const StyledError = styled.span`
-  font-size: 12px;
-  color: #b02a37;
+    font-size: 12px;
+    color: #b02a37;
 `;
 
 export const StyledImgPreview = styled.div`
-  margin-top: 10px;
+    margin-top: 10px;
 
-  .do-upload {
-    &__active {
-      opacity: 0.3;
+    .do-upload {
+        &__active {
+            opacity: 0.3;
+        }
     }
-  }
 `;
 
 export const StyledH3 = styled(H3)`
-  margin: 20px 0;
+    margin: 20px 0;
 `;
 
 export const StyledButtonSubmit = styled(Button)`
-  margin-top: 30px;
+    margin-top: 30px;
 `;

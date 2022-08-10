@@ -72,7 +72,7 @@ const InputFileWithUpload = ({
                     value: "",
                 })}
             />
-            {fileInputWatch ? (
+            {fileInputWatch > 0 && (
                 <StyledImgPreview>
                     <StyledImg
                         width="150px"
@@ -80,7 +80,7 @@ const InputFileWithUpload = ({
                         className={onUpload ? "do-upload__active" : ""}
                     />
                 </StyledImgPreview>
-            ) : null}
+            )}
         </>
     );
 };
