@@ -1,3 +1,9 @@
-const Container = (props) => <div className="container">{props.children}</div>;
+export const Container = ({ className, children }) => (
+    <div className={`container ${className ? className : ""}`}>{children}</div>
+);
 
-export default Container;
+export const ContainerFluid = ({ className, children }) => (
+    <div className={`container-fluid ${className ? className : ""}`}>
+        {children}
+    </div>
+);

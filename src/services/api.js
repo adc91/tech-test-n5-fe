@@ -1,8 +1,7 @@
-export const fetchAPI = async (apiUrl, data) => {
+export const fetchAPI = async (apiUrl = {}) => {
     return new Promise((resolve, reject) => {
         fetch(apiUrl, {
-            method: "POST",
-            body: data,
+            method: "GET",
         })
             .then((response) => {
                 if (response.status !== 200)

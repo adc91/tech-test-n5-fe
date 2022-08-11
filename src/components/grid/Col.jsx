@@ -1,3 +1,7 @@
-const Col = ({ children, cols }) => <div className={cols}>{children}</div>;
+const Col = (props) => (
+    <div className={props.cols} {...props}>
+        {props.children}
+    </div>
+);
 
 export default Col;

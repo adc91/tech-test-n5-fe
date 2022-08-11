@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const StyledButton = styled.button`
+export const StyledCssButon = css`
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     border-radius: 10px;
     border: 1px solid transparent;
@@ -78,5 +78,8 @@ export const StyledButton = styled.button`
         `
             margin: 0 auto;
             display: table;
-        }`}
+        }`}`;
+
+export const StyledButton = styled.button`
+    ${StyledCssButon}
 `;
