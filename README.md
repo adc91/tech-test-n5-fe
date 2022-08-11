@@ -1,4 +1,4 @@
-# REACT APP BACKEND
+# REACT APP FE
 
 ## Implementación local
 
