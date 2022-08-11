@@ -47,7 +47,9 @@ const Detail = () => {
                 <Col cols="col-12 col-md-8">
                     <StyledH3>{movie?.title}</StyledH3>
                     <StyledP>{movie?.description}</StyledP>
-                    <StyledH3 className="__actors">{t("cast")}</StyledH3>
+                    {movie?.actors?.length > 0 && (
+                        <StyledH3 className="__actors">{t("cast")}</StyledH3>
+                    )}
                     <Row>
                         {movie?.actors?.map((item, index) => {
                             return (
