@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 const languageMap = {
     es: { label: "Español", dir: "ltr" },
-    en: { label: "English", dir: "ltl" },
+    en: { label: "English", dir: "ltr" },
 };
 
 const LanguageSelect = () => {
