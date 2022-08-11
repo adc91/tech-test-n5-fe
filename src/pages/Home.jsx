@@ -5,12 +5,7 @@ import Row from "../components/grid/Row";
 import Col from "../components/grid/Col";
 
 import { StyledH2, StyledListItem } from "../components/styles/Page.styled";
-import {
-    StyledH3,
-    StyledImg,
-    StyledP,
-    StyledSpan,
-} from "../components/styles/Tags.styled";
+import { StyledH3, StyledImg, StyledP } from "../components/styles/Tags.styled";
 import { ButtonRouterLink } from "../components/styles/Router.styled";
 
 import { API_URL } from "../vars";
@@ -40,20 +35,9 @@ const Home = () => {
                                     center
                                 />
                             </Col>
-                            <Col cols="col-12 col-md-8">
+                            <Col cols="col-12 col-md-6">
                                 <StyledH3>{movie.title}</StyledH3>
-                                <StyledP>
-                                    <StyledSpan className="__bold">
-                                        {t("episodes")}:
-                                    </StyledSpan>{" "}
-                                    145
-                                </StyledP>
-                                <StyledP>
-                                    <StyledSpan className="__bold">
-                                        {t("country_origin")}:
-                                    </StyledSpan>{" "}
-                                    Estados Unidos
-                                </StyledP>
+                                <StyledP>{movie.description}</StyledP>
                                 <ButtonRouterLink
                                     variant="primary"
                                     to={`/show/${movie._id}`}

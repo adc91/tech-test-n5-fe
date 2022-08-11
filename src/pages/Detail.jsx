@@ -11,11 +11,7 @@ import {
     StyledListAvatar,
     StyledListPeople,
 } from "../components/styles/Page.styled";
-import {
-    StyledImg,
-    StyledP,
-    StyledSpan,
-} from "../components/styles/Tags.styled";
+import { StyledImg, StyledP } from "../components/styles/Tags.styled";
 
 import { API_URL } from "../vars";
 import { fetchAPI } from "../services/api";
@@ -50,18 +46,7 @@ const Detail = () => {
                 </Col>
                 <Col cols="col-12 col-md-8">
                     <StyledH3>{movie?.title}</StyledH3>
-                    <StyledP>
-                        <StyledSpan className="__bold">
-                            {t("episodes")}:
-                        </StyledSpan>{" "}
-                        145
-                    </StyledP>
-                    <StyledP>
-                        <StyledSpan className="__bold">
-                            {t("country_origin")}:
-                        </StyledSpan>{" "}
-                        Estados Unidos
-                    </StyledP>
+                    <StyledP>{movie?.description}</StyledP>
                     <StyledH3 className="__actors">{t("cast")}</StyledH3>
                     <Row>
                         {movie?.actors?.map((item, index) => {
@@ -74,12 +59,12 @@ const Detail = () => {
                                     <Row>
                                         <Col cols="col-12 col-md-3">
                                             <StyledListAvatar
-                                                backgroundImage={`${API_URL}/images/${item[0]?.photo_file}`}
+                                                backgroundImage={`${API_URL}/images/${item.photo_file}`}
                                             ></StyledListAvatar>
                                         </Col>
                                         <Col cols="col-12 col-md-9">
                                             <StyledListPeople>
-                                                {item[0].fullName}
+                                                {item.fullName}
                                             </StyledListPeople>
                                         </Col>
                                     </Row>
