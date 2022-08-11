@@ -38,7 +38,7 @@ const Detail = () => {
                             style={{
                                 maxHeight: 600,
                             }}
-                            src={`${API_URL}/images/${movie?.cover}`}
+                            src={movie.cover}
                             alt={movie?.title}
                             center
                         />
@@ -61,7 +61,9 @@ const Detail = () => {
                                     <Row>
                                         <Col cols="col-12 col-md-3">
                                             <StyledListAvatar
-                                                backgroundImage={`${API_URL}/images/${item.photo_file}`}
+                                                backgroundImage={
+                                                    item.photo_file
+                                                }
                                             ></StyledListAvatar>
                                         </Col>
                                         <Col cols="col-12 col-md-9">

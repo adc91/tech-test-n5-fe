@@ -30,7 +30,7 @@ const Home = () => {
                             <Col cols="col-12 col-md-4">
                                 <StyledImg
                                     height="300px"
-                                    src={`${API_URL}/images/${movie.cover}`}
+                                    src={movie.cover}
                                     alt={movie.title}
                                     center
                                 />
